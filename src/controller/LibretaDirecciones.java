@@ -31,6 +31,7 @@ public class LibretaDirecciones extends Application {
     }
 
     private void initLayoutPrincipal() {
+        
         FXMLLoader loader = new FXMLLoader();
         URL location = LibretaDirecciones.class.getResource("../view/VistaPrincipal.fxml");
         loader.setLocation(location);
@@ -46,6 +47,18 @@ public class LibretaDirecciones extends Application {
     }
 
     private void muestraVistaPersona() {
+        
+        FXMLLoader loader = new FXMLLoader();
+        URL location = LibretaDirecciones.class.getResource("../view/VistaPersona.fxml");
+        loader.setLocation(location);
+        try {
+            vistaPersona=loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(LibretaDirecciones.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        layoutPrincipal.setCenter(vistaPersona);
+        
+        
     }
 
     public static void main(String[] args) {
